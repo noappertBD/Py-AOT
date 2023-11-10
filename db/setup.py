@@ -212,7 +212,7 @@ class VocMutes(SQLObject):
 class Custom(SQLObject):
     server = IntCol()
     name = StringCol()
-    response = StrincCol()
+    response = StringCol()
     embed = StringCol()
 
     def toDict(self):
@@ -256,17 +256,6 @@ class TicketsEmbed(SQLObject):
             "buttonColor": self.buttonColor,
         }
 
-
-class Tickets(SQLObject):
-    server = IntCol()
-    
-    
-
-
-# class Pronote(SQLObject):
-#     pass
-
-
 Users.createTable(ifNotExists=True)
 Warns.createTable(ifNotExists=True)
 Kicks.createTable(ifNotExists=True)
@@ -276,3 +265,10 @@ RoomsLocker.createTable(ifNotExists=True)
 ParamsSalons.createTable(ifNotExists=True)
 ParamsOnOff.createTable(ifNotExists=True)
 Owners.createTable(ifNotExists=True)
+Blacklist.createTable(ifNotExists=True)
+Whitelist.createTable(ifNotExists=True)
+VocMutes.createTable(ifNotExists=True)
+Custom.createTable(ifNotExists=True)
+Money.createTable(ifNotExists=True)
+TicketsEmbed.createTable(ifNotExists=True)
+

@@ -1,5 +1,5 @@
 import discord
-from auto import *
+from auto import onready
 from db.setup import *
 
 set = [
@@ -17,13 +17,15 @@ set = [
     ],
 ]
 
-config = set[1]
-v = 0.10
+config = set[0]
+v = "0.10"
 
 intents = discord.Intents.default()
 intents.members = True
 
 bot = discord.Bot(intents=intents)
 
+
+onready.setup(bot, v, config)
 # Lancement de discord.py
 bot.run(config[0])
