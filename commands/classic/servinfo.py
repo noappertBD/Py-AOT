@@ -4,7 +4,7 @@ import time
 import pytz
 
 def setup(bot, config):
-    @bot.slash_command(description="Affiche le ping du bot")
+    @bot.slash_command(description="Affiche les infos du serveur")
     async def servinfo(
         ctx,
     ):
@@ -43,13 +43,12 @@ def setup(bot, config):
         )
         embed.add_field(
             name="🧮 Membres:",
-            value="%s Membres" % server.member_count,
+            value="%(membres)s Membres • %(bots)s Bots" % {"membres": len([member for member in server.members if not member.bot]), "bots": len([member for member in server.members if member.bot])},
             inline=False
         )
         embed.add_field(
             name="👑 Owner",
-            value=("%s" % server.owner.mention),
+            value=("%s" % guildowner.mention),
             inline=False
         )
-        embed.set_footer(text=ctx.guild.name, icon_url=ctx.guild.icon)
         await ctx.respond(embed=embed)
