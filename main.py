@@ -5,13 +5,13 @@ from db.setup import *
 
 set = [
     [
-        "MTA0MDM2NTI0MDYzNTg4NzcxOA.GAgJsX.myKInNGENRaBEAtKK2VQ2RszRJZEp-hmEgqDJY",
-        1040365240635887718,
+        <str:token bot>,
+        <int:Channel ID for welcoming>,
         "dev",
     ],
     [
-        "MTE3MjEzOTk2NzYxNTYxNTAzNw.GswdGF.C1mzQbvE3CzU8d1z2pSc5_gQ_DAzfW2YPrZdyg",
-        871727190499262537,
+        <str:token bot (dev)>,
+        <int:Test Channel ID for welcoming>,
         "main",
     ],
 ]
